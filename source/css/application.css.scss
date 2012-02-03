@@ -1,0 +1,148 @@
+@import "compass";
+@import "bootstrap2/bootstrap";
+@import "bootstrap2/subnav";
+
+body{
+  padding-top: 40px;
+}
+// branding
+.brand{
+  color: white;
+  font-weight: normal;
+  text-shadow: none;
+  padding-top: 5px;
+  em {
+    color: complement($primaryButtonBackground);
+    text-shadow: 1px 0px 0px lighten(complement($primaryButtonBackground), 20);
+  }
+}
+
+.navbar .content{
+  float: none;
+  margin: 0;
+}
+
+// General layout
+
+body > .container-fluid{
+  position: absolute;
+  top: 80px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  padding: 0;
+  min-width: 940px;
+
+  & > .content{
+    margin: 0;
+    position: absolute;
+    left: 220px;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    // padding-top: 10px;
+    overflow: scroll;
+    &.no-sidebar{
+      min-width: 960px;
+      max-width: 1420px;
+      margin: 0;
+    }   
+  }
+
+  .sidebar{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 219px;
+    @extend .well;
+    @include border-radius(0);
+    border-width: 0 1px 0 0;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+// Some default styling
+
+.inverted {
+  // @include contrasted($gray);
+  @include gradient-vertical($grayDark, $gray);
+  $shadow: 0 1px 3px rgba(0,0,0,.25), inset 0 -1px 0 rgba(0,0,0,.1);
+  @include box-shadow($shadow);
+  color: $grayLight;
+}
+
+.full-width{
+  @include box-sizing(border-box);
+  width: 100%;
+}
+
+.left-width{
+  padding-left: 20px;
+}
+
+
+// Fix for the list icons and hover
+.nav-list .active i{
+  background-image: url(../img/glyphicons-halflings-white.png);
+}
+.nav-list .active > a:hover {
+  background-color: $linkColorHover;
+}
+
+
+// Take the hero unit down a notch
+.hero-unit {
+  padding: 15px 30px;
+  margin-bottom: 0px;
+  background-color: lighten($infoBackground, 7%);
+  border-top: 2px dashed $infoBackground;
+  @include border-radius(0px);
+  h1 {
+    margin-bottom: 0;
+    font-size: 30px;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+  p {
+    font-size: inherit;
+    font-weight: 200;
+    line-height: $baseLineHeight * 1.5;
+  }
+}
+
+// thumbnails
+.thumbnails{
+  margin: 20px 0;
+}
+
+//task
+#tasks{
+  > .row-fluid:nth-child(odd) .task{
+    background-color: #f9f9f9;
+  }
+}
+
+.task{
+  padding: 0 0 7px 0;
+  border-top: 1px solid #ddd;
+  font-weight: 200;
+}
+
+.task-colors{
+  padding: 10px;
+  .label{
+    padding: 0;
+    width: 12px;
+    height: 12px;
+  }
+}
+
+
+// modal wide
+.modal-wide {
+  max-height: 660px;
+  overflow: auto;
+  width: 880px;
+  margin: -260px 0 0 -440px;
+}

@@ -1,0 +1,329 @@
+.navbar.navbar-fixed-top{"data-dropdown"=>"dropdown"}
+  .navbar-inner
+    .container-fluid
+      .content.no-sidebar
+        .brand 
+          <strong>on<em>takeoff</em></strong>
+        %ul.nav
+          %li= link_to "Quotes" , "#"
+          %li= link_to "Projects" , "#"
+          %li= link_to "Invoices" , "#"
+          %li= link_to "Materials" , "#"
+          %li= link_to "Clients" , "#"
+        %ul.nav.pull-right
+          %li= link_to image_tag("/images/embed/help.png"), "#", :target=>"_blank", :style=>"padding: 10px 10px 5px"
+          %li.dropdown
+            = link_to image_tag("/images/20-gear2.png"), "#", :class=>"dropdown-toggle", :style=>"padding: 10px 10px 5px"
+              
+.subnav.subnav-fixed
+  .row-fluid
+    %ul.nav.nav-pills.pull-left
+      %li
+        %a
+          %i.icon-eye-open
+          Preview
+      %li
+        %a
+          %i.icon-envelope
+          Email
+      %li.dropdown
+        %a.dropdown-toggle
+          More
+          %b.caret
+    .btn-group.pull-right{style:"padding: 4px"}
+      %a.btn.btn-primary.active Draft
+      %a.btn.btn-primary Sent
+      %a.btn.btn-primary Approved
+      %a.btn.btn-primary Closed
+
+.container-fluid
+  .sidebar
+    %ul.nav.nav-list
+      %li.nav-header Living room
+      %li.active
+        %a{href:"123"}
+          %i.icon-pencil
+          Description
+      %li
+        %i.icon-picture
+        Photos & Documents
+      %li 
+        %i.icon-screenshot
+        Measurements  
+      %li
+        %i.icon-check
+        Tasks & Estimates
+      %li.nav-header Kitchen
+      %li 
+        %i.icon-pencil
+        Description
+      %li
+        %i.icon-picture
+        Photos & Documents
+      %li 
+        %i.icon-screenshot
+        Measurements  
+      %li
+        %i.icon-check
+        Tasks & Estimates
+      %li.nav-header
+        %a
+          %i.icon-plus-sign
+          Add section...
+    
+    %section.client
+
+    %section.project
+
+    %section.totals
+      
+  .content
+    .row-fluid
+      .hero-unit
+        %h1 Title section #1
+        %textarea.full-width{rows:6}
+    .row-fluid{"data-toggle"=>"collapse", "data-target"=>"#photos"}
+      .hero-unit
+        %h1 Photos & Documents
+        %p Take photos, upload documents or draw sketches related to this section.
+    #photos.collapse
+      .thumbnails.row-fluid
+        .span4
+          .thumbnail
+            %img{src:"http://placehold.it/245x170"}
+            %p.caption
+              Upload description 
+            .btn-group.pull-left{style:"position:relative;top:-10px;left:40%"}
+              %a.btn.dropdown-toggle
+                %i.icon-pencil
+                %span.caret
+        .span4
+          .thumbnail
+            %img{src:"http://placehold.it/245x170"}
+            %p.caption
+              Upload description 
+            .btn-group.pull-left{style:"position:relative;top:-10px;left:40%"}
+              %a.btn.dropdown-toggle
+                %i.icon-pencil
+                %span.caret
+        .span4
+          .thumbnail
+            %img{src:"http://placehold.it/245x170"}
+            %p.caption
+              Upload a new document (ios: photo)
+            .btn-group.pull-left{style:"position:relative;top:-10px;left:40%"}
+              %a.btn 
+                %i.icon-upload
+              %a.btn.dropdown-toggle
+                %span.caret
+        
+    .row-fluid{"data-toggle"=>"collapse", "data-target"=>"#measurements"}
+      .hero-unit
+        %h1 Measurements
+        %p Take measurements on site and use them later in your estimates.
+    #measurements.row-fluid.collapse
+      .span12
+        %table.table.table-striped
+          %thead
+            %tr
+              %th Measurement
+              %th Value
+              %th Color
+              %th
+          %tbody
+            %tr
+              %td Width
+              %td 10'
+              %td 
+                %span.label.label-success &nbsp;
+              %td
+                .btn-group
+                  %a.btn.dropdown-toggle
+                    %i.icon-pencil
+                    %span.caret
+            %tr
+              %td Length
+              %td 10'
+              %td 
+                %span.label.label-warning &nbsp;
+              %td
+                .btn-group
+                  %a.btn.dropdown-toggle
+                    %i.icon-pencil
+                    %span.caret
+            %tr
+              %td Height
+              %td 8'
+              %td 
+                %span.label &nbsp;
+              %td
+                .btn-group
+                  %a.btn.dropdown-toggle
+                    %i.icon-pencil
+                    %span.caret
+            %tr
+              %td
+                %input
+              %td
+                %input
+              %td 
+                %span.label &nbsp;
+              %td
+    .row-fluid{"data-toggle"=>"collapse", "data-target"=>"#tasks"}
+      .hero-unit
+        %h1 Tasks & Estimates
+        %p Describe your work and estimate labour & materials.
+
+    #tasks.collapse
+      .row-fluid
+        .span12
+          .task
+            .row-fluid
+              / colors
+              .span1
+                .task-colors
+                  .label.label-success 
+              / description
+              .span11
+                %h4 Take walls down
+                .row-fluid
+                  .span4
+                    %i.icon-time
+                    10h / 1000$
+                  .span4
+                    %i.icon-shopping-cart
+                    2000$
+                  .span4
+                    .btn-group.pull-right
+                      %a.btn{"data-toggle"=>"modal", href:"#estimate"}
+                        %i.icon-edit
+                        Estimate
+                      %a.btn.dropdown-toggle
+                        %span.caret
+      
+      
+      .row-fluid
+        .span12
+          .task
+            .row-fluid
+              / colors
+              .span1
+                .task-colors
+                  .label.label-success 
+              / description
+              .span11
+                %h4 Build new walls
+                .row-fluid
+                  .span4
+                    %i.icon-time
+                    10h / 1000$
+                  .span4
+                    %i.icon-shopping-cart
+                    2000$
+                  .span4
+                    .btn-group.pull-right
+                      %a.btn
+                        %i.icon-edit
+                        Estimate
+                      %a.btn.dropdown-toggle
+                        %span.caret
+      .row-fluid
+        .span12
+          .task
+            .row-fluid
+              / colors
+              .span1
+                .task-colors
+                  .label.label-success 
+              / description
+              .span11
+                %h4 Pretty up
+                .row-fluid
+                  .span4
+                    %i.icon-time
+                    10h / 1000$
+                  .span4
+                    %i.icon-shopping-cart
+                    2000$
+                  .span4
+                    .btn-group.pull-right
+                      %a.btn
+                        %i.icon-edit
+                        Estimate
+                      %a.btn.dropdown-toggle
+                        %span.caret
+                      
+      .row-fluid
+        %a.btn
+          %i.icon-plus-sign
+          Add task
+          
+      #estimate.modal.modal-wide.fade.hide
+        .modal-header
+          %a.close{"data-dismiss"=>"modal"}x
+          %h3 Estimate "Take walls down"
+        .modal-body 
+          %h6 Labour
+          .task.row-fluid
+            .span4
+              Item
+            .span6
+              Quantity
+            .span2
+              .pull-right
+                Total
+          .task.row-fluid
+            .span4
+              .row-fluid
+                .span12
+                  %input.full-width{style:"height:auto"}
+              .row-fluid
+                .span6
+                  %input.full-width{style:"height:auto"}
+                .span6
+                  %input.full-width{style:"height:auto"}
+            .span6
+              %textarea.full-width{rows:3}
+            .span2
+              .pull-right
+                0.00 $
+          .row-fluid
+            .pull-right
+              %a.btn
+                %i.icon-plus-sign
+                Add Labour
+          %h6 Materials
+          .task.row-fluid
+            .span4
+              Item
+            .span6
+              Quantity
+            .span2
+              .pull-right
+                Total
+          .task.row-fluid
+            .span4
+              .row-fluid
+                .span12
+                  %input.full-width{style:"height:auto"}
+              .row-fluid
+                .span6
+                  %input.full-width{style:"height:auto"}
+                .span6
+                  %input.full-width{style:"height:auto"}
+            .span6
+              %textarea.measurements-popover.full-width{rows:3, "data-trigger"=>"focus", "data-title"=>"Available Measurements", "data-placement"=>"top"}
+            .span2
+              .pull-right
+                0.00 $
+          .row-fluid
+            .pull-right
+              %a.btn
+                %i.icon-plus-sign
+                Add material
+          #popover.hide
+            different measurements
+            
+        .modal-footer
+          .pull-right
+            Total: 3000 $
